@@ -1,209 +1,328 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bonsai Capture | Own Your AI Conversations</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-container": "#03b5d3",
+                        "on-secondary-fixed": "#001f26",
+                        "on-tertiary": "#003915",
+                        "surface-bright": "#31394d",
+                        "surface-container-low": "#131b2e",
+                        "on-primary": "#003825",
+                        "surface-container": "#171f33",
+                        "error-container": "#93000a",
+                        "error": "#ffb4ab",
+                        "inverse-surface": "#dae2fd",
+                        "on-primary-fixed": "#002114",
+                        "on-primary-container": "#00563b",
+                        "background": "#0b1326",
+                        "secondary": "#4cd7f6",
+                        "on-background": "#dae2fd",
+                        "primary": "#5af0b3",
+                        "tertiary-container": "#3bd56c",
+                        "surface-tint": "#45dfa4",
+                        "primary-container": "#34d399",
+                        "surface-container-lowest": "#060e20",
+                        "on-surface": "#dae2fd",
+                        "on-secondary-container": "#00424e",
+                        "secondary-fixed": "#acedff",
+                        "primary-fixed": "#68fcbf",
+                        "on-primary-fixed-variant": "#005137",
+                        "surface-container-high": "#222a3d",
+                        "tertiary-fixed-dim": "#4ae176",
+                        "outline": "#85948b",
+                        "on-tertiary-fixed": "#002109",
+                        "surface": "#0b1326",
+                        "on-secondary": "#003640",
+                        "on-error": "#690005",
+                        "inverse-on-surface": "#283044",
+                        "primary-fixed-dim": "#45dfa4",
+                        "tertiary": "#5df285",
+                        "outline-variant": "#3c4a42",
+                        "on-surface-variant": "#bbcac0",
+                        "surface-container-highest": "#2d3449",
+                        "on-tertiary-fixed-variant": "#005321",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "on-error-container": "#ffdad6",
+                        "inverse-primary": "#006c4b",
+                        "tertiary-fixed": "#6bff8f",
+                        "on-tertiary-container": "#005724",
+                        "surface-dim": "#0b1326"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #0b1326; color: #dae2fd; }
+        .digital-biome-gradient {
+            background: linear-gradient(135deg, #34d399 0%, #03b5d3 100%);
+        }
+        .glass-panel {
+            background: rgba(45, 52, 73, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
 </head>
+<body class="bg-background selection:bg-primary/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0b1326]/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="text-xl font-bold bg-gradient-to-r from-[#34D399] to-[#4cd7f6] bg-clip-text text-transparent font-headline tracking-tight">Bonsai Capture</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[#34D399] font-bold border-b-2 border-[#34D399] pb-1 font-headline tracking-tight" href="#">Product</a>
+<a class="text-slate-400 font-medium hover:text-[#4cd7f6] transition-colors duration-300 font-headline tracking-tight" href="#">Features</a>
+<a class="text-slate-400 font-medium hover:text-[#4cd7f6] transition-colors duration-300 font-headline tracking-tight" href="#">Pricing</a>
+<a class="text-slate-400 font-medium hover:text-[#4cd7f6] transition-colors duration-300 font-headline tracking-tight" href="#">About</a>
+</div>
+<div class="flex gap-4 items-center">
+<button class="hidden md:block text-slate-400 font-medium hover:text-white transition-colors">Sign In</button>
+<button class="px-6 py-2 rounded-full digital-biome-gradient text-on-primary-fixed-variant font-bold scale-95 active:scale-90 transition-transform">Get Started</button>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative px-8 py-24 max-w-7xl mx-auto flex flex-col items-center text-center overflow-hidden">
+<!-- Organic Background Element -->
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-[100px] -z-10"></div>
+<div class="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary/10 rounded-full blur-[100px] -z-10"></div>
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel border border-white/5 mb-8">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-label text-sm font-medium text-on-surface-variant">Alpha v0.12 Now Available</span>
+</div>
+<h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-8 leading-[1.1] max-w-5xl">
+                Your AI conversations are valuable. <span class="text-on-surface-variant opacity-50">Right now, they’re trapped.</span>
+</h1>
+<p class="text-body text-xl md:text-2xl text-on-surface-variant max-w-2xl mb-12 font-light">
+                Escape the walled gardens. Bonsai Capture turns your temporary LLM chats into permanent knowledge gardens.
+            </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="px-10 py-5 rounded-full digital-biome-gradient text-on-primary-fixed-variant font-bold text-xl flex items-center gap-3 shadow-xl shadow-primary/20 hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined">download</span>
+                    Download Alpha
+                </button>
+<button class="px-10 py-5 rounded-full glass-panel border border-white/10 text-on-surface font-semibold text-xl hover:bg-surface-container-high transition-colors">
+                    View Demo
+                </button>
+</div>
+<div class="mt-20 w-full max-w-5xl rounded-2xl overflow-hidden border border-white/5 shadow-2xl">
+<img class="w-full aspect-video object-cover" data-alt="Modern dark mode software interface showing a list of AI chat exports organized in a clean obsidian-style knowledge base" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBujusm6RbuShw4bnjpzWaws-5BOiL15aoOJ_GI8umKFhkVFrd-GNMha5B3RPJffRCssBHxFwrPmqLZ1nkRaUS7tEXNRPlJ-wT9mkjIrU6QY2KNwcnv4DnUlbq3ckjj0QN4iv_rsCU9JH7j0fRXsH31xnC8IE34RGOtGNresmMzUsJ_BV-c0WmDE1F8gQwOxUS6cc7smkAzCXDVbUgKh2PhZL8BvTIntJqUFC0hWB16yRcZoAiETCkBCYf5xzrqljc1TJtT75wy7fhd"/>
+</div>
+</section>
+<!-- Problem Section -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-8">The walled gardens of AI.</h2>
+<p class="text-lg text-on-surface-variant mb-6 leading-relaxed">
+                        Every day, you have brilliant conversations with ChatGPT, Claude, and Gemini. Yet, those insights are locked behind proprietary interfaces, hard to search, and impossible to link to your existing notes.
+                    </p>
+<div class="space-y-4">
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-error mt-1">cancel</span>
+<span class="text-on-surface-variant">No cross-platform search functionality.</span>
+</div>
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-error mt-1">cancel</span>
+<span class="text-on-surface-variant">Loss of data ownership and provenance.</span>
+</div>
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-error mt-1">cancel</span>
+<span class="text-on-surface-variant">Disconnected from your local knowledge base.</span>
+</div>
+</div>
+</div>
+<div class="glass-panel p-1 rounded-3xl border border-white/5 shadow-inner">
+<div class="bg-surface p-8 rounded-2xl border border-white/5">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-full bg-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-error">lock</span>
+</div>
+<div>
+<h3 class="font-bold text-xl">Proprietary Lock-in</h3>
+<p class="text-sm text-on-surface-variant">The current state of AI chats</p>
+</div>
+</div>
+<div class="h-64 flex flex-col justify-end gap-3">
+<div class="w-full h-8 bg-surface-container-highest rounded-full animate-pulse"></div>
+<div class="w-4/5 h-8 bg-surface-container-high rounded-full animate-pulse opacity-80"></div>
+<div class="w-11/12 h-8 bg-surface-container rounded-full animate-pulse opacity-60"></div>
+<div class="w-2/3 h-8 bg-surface-container-low rounded-full animate-pulse opacity-40"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Section -->
+<section class="py-32 max-w-7xl mx-auto px-8">
+<div class="mb-20 text-center">
+<h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Cultivating your digital biome.</h2>
+<p class="text-on-surface-variant text-xl">Powerful tools to bridge the gap between AI and human thought.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Feature 1 -->
+<div class="group p-8 rounded-3xl bg-surface-container-low hover:bg-surface-container-high transition-all duration-500 border border-transparent hover:border-primary/10">
+<div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">unfold_more</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Vendor Lock-in Free</h3>
+<p class="text-on-surface-variant leading-relaxed">Export your entire history from ChatGPT, Claude, and more. Your data, your format, your control.</p>
+</div>
+<!-- Feature 2 -->
+<div class="group p-8 rounded-3xl bg-surface-container-low hover:bg-surface-container-high transition-all duration-500 border border-transparent hover:border-secondary/10">
+<div class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary text-3xl">markdown</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Obsidian Ready</h3>
+<p class="text-on-surface-variant leading-relaxed">Perfectly formatted Markdown files with YAML frontmatter, ready to be dropped into your Second Brain.</p>
+</div>
+<!-- Feature 3 -->
+<div class="group p-8 rounded-3xl bg-surface-container-low hover:bg-surface-container-high transition-all duration-500 border border-transparent hover:border-tertiary/10">
+<div class="w-14 h-14 rounded-2xl bg-tertiary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary text-3xl">verified</span>
+</div>
+<h3 class="text-2xl font-bold mb-4">Perfect Provenance</h3>
+<p class="text-on-surface-variant leading-relaxed">Every capture includes original timestamps, model IDs, and deep links back to the source conversation.</p>
+</div>
+</div>
+</section>
+<!-- Output Preview -->
+<section class="py-24 bg-surface-container-low relative overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="text-4xl font-bold tracking-tight mb-6">What you actually get.</h2>
+<p class="text-lg text-on-surface-variant mb-8 leading-relaxed">
+                        We don't just dump text. We craft structured data that your future self will appreciate. Beautifully sanitized Markdown that fits any workflow.
+                    </p>
+<ul class="space-y-4">
+<li class="flex gap-3 items-center">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span>Automatic YAML metadata tags</span>
+</li>
+<li class="flex gap-3 items-center">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span>Syntax-highlighted code blocks</span>
+</li>
+<li class="flex gap-3 items-center">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span>Reference IDs for easy linking</span>
+</li>
+</ul>
+</div>
+<div class="rounded-2xl bg-[#0d1117] p-6 shadow-2xl border border-white/5 font-mono text-sm overflow-hidden">
+<div class="flex gap-2 mb-4 border-b border-white/5 pb-4">
+<div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+<div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+<div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+<span class="ml-4 text-xs text-slate-500">2024-05-12-quant-finance.md</span>
+</div>
+<pre class="text-[#c9d1d9]"><span class="text-[#ff7b72]">---</span>
+<span class="text-[#79c0ff]">title</span>: <span class="text-[#a5d6ff]">Quant Finance Strategies</span>
+<span class="text-[#79c0ff]">model</span>: <span class="text-[#a5d6ff]">Claude 3.5 Sonnet</span>
+<span class="text-[#79c0ff]">tags</span>: <span class="text-[#a5d6ff]">[finance, ai-chat, bonsai]</span>
+<span class="text-[#ff7b72]">---</span>
 
-<body class="bg-gray-950 text-white font-sans selection:bg-green-900 selection:text-white">
+<span class="text-[#d2a8ff]"># Summary of Conversation</span>
 
-  <div class="max-w-5xl mx-auto px-6 py-16">
+The user asked about risk-neutral pricing...
 
-    <!-- HERO -->
-    <section class="mb-20 text-center md:text-left flex flex-col md:flex-row items-center gap-12">
-      <div class="flex-1">
-        <h1 class="text-5xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
-          Your AI conversations are valuable.<br/>
-          <span class="text-gray-400">Right now, they’re trapped.</span>
-        </h1>
-
-        <p class="text-xl text-gray-300 mb-6 max-w-xl">
-          Bonsai Capture extracts your chats from ChatGPT, Claude, and Gemini into clean, structured files. No copy-paste. No broken formatting. Just your data—portable and yours.
-        </p>
-
-        <p class="text-sm text-gray-500 mb-8">
-          Used by developers, researchers, and writers who rely on AI daily.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="#" class="bg-white text-black px-8 py-3 rounded-xl font-semibold text-center hover:bg-gray-200 transition">
-            Download Alpha (30-second install)
-          </a>
-          <a href="#future" class="border border-gray-600 hover:border-gray-400 px-8 py-3 rounded-xl text-center transition">
-            See what’s next
-          </a>
-        </div>
-      </div>
-
-      <!-- HERO IMAGE -->
-      <div class="flex-1 w-full">
-        <div class="w-full aspect-[4/3] bg-gray-900 border border-gray-800 rounded-2xl flex items-center justify-center text-gray-500 shadow-2xl">
-          <span class="font-mono text-sm text-center px-4">
-            [ GIF: Exporting a chat → saving .md file ]
-          </span>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROBLEM -->
-    <section class="mb-24 grid md:grid-cols-2 gap-16 items-center">
-      <div>
-        <h2 class="text-3xl font-semibold mb-6">
-          The walled gardens of AI are holding your data hostage.
-        </h2>
-
-        <div class="space-y-6 text-gray-400 text-lg">
-          <p>
-            You spend hours crafting prompts, refining outputs, and building knowledge inside AI chats.
-          </p>
-          <p>
-            But when you try to reuse it, everything breaks—formatting is lost, structure disappears, and your context stays locked inside a UI.
-          </p>
-          <p>
-            Switching tools means starting over.
-          </p>
-        </div>
-      </div>
-
-      <div class="w-full aspect-video bg-gray-900 border border-gray-800 rounded-2xl flex items-center justify-center text-gray-500 shadow-lg">
-        <span class="font-mono text-sm text-center px-4">
-          [ Image: ChatGPT / Claude / Gemini → fragmented vs clean files ]
-        </span>
-      </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section class="mb-24">
-      <h2 class="text-3xl font-semibold mb-10 text-center">
-        Your data, your formats, your tools.
-      </h2>
-
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="p-8 bg-gray-900 border border-gray-800 rounded-2xl hover:border-gray-600 transition">
-          <div class="text-2xl mb-4">🗄️</div>
-          <h3 class="font-semibold text-xl mb-3">Avoid Vendor Lock-in</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">
-            Extract from ChatGPT, Claude, and Gemini. Take your conversations anywhere—no matter which model wins.
-          </p>
-        </div>
-
-        <div class="p-8 bg-gray-900 border border-gray-800 rounded-2xl hover:border-gray-600 transition">
-          <div class="text-2xl mb-4">📝</div>
-          <h3 class="font-semibold text-xl mb-3">Obsidian & PKM Ready</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">
-            Turn your chats into a searchable knowledge base. Export to Markdown and drop directly into Obsidian or your second brain system.
-          </p>
-        </div>
-
-        <div class="p-8 bg-gray-900 border border-gray-800 rounded-2xl hover:border-gray-600 transition">
-          <div class="text-2xl mb-4">🔍</div>
-          <h3 class="font-semibold text-xl mb-3">Perfect Provenance</h3>
-          <p class="text-gray-400 text-sm leading-relaxed">
-            Preserve prompts, outputs, code, and metadata so every conversation stays inspectable and reusable.
-          </p>
-        </div>
-      </div>
-
-      <p class="text-xs text-gray-600 text-center mt-6">
-        Built with a provider-agnostic capture engine and structured export pipeline for long-term interoperability.
-      </p>
-    </section>
-
-    <!-- OUTPUT -->
-    <section class="mb-24">
-      <h2 class="text-3xl font-semibold mb-10 text-center">
-        What you actually get
-      </h2>
-
-      <div class="bg-gray-900 border border-gray-800 rounded-2xl p-8 font-mono text-sm text-gray-300 space-y-2">
-        <p>chat-export/</p>
-        <p>├── conversation.md</p>
-        <p>├── conversation.json</p>
-        <p>├── metadata.json</p>
-        <p>└── assets/</p>
-      </div>
-    </section>
-
-    <!-- FUTURE -->
-    <section id="future" class="mb-24 bg-gradient-to-b from-gray-900 to-gray-950 border border-gray-800 p-10 rounded-3xl">
-      <div class="md:flex gap-12 items-center">
-        <div class="flex-1">
-          <span class="bg-blue-900/50 text-blue-400 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
-            Coming Soon
-          </span>
-
-          <h2 class="text-3xl font-semibold mt-4 mb-4">
-            Background Sync (Pro)
-          </h2>
-
-          <p class="text-gray-400 mb-6">
-            Soon, you won’t need to export anything.
-          </p>
-
-          <p class="text-gray-400 mb-6">
-            Your conversations will automatically sync to your local files or cloud storage as you chat—across every AI tool you use.
-          </p>
-
-          <ul class="text-gray-500 space-y-2 text-sm font-mono mb-6">
-            <li>+ Auto-export to Markdown folders</li>
-            <li>+ Expanded platform support</li>
-            <li>+ Cross-platform search</li>
-          </ul>
-
-          <a href="#" class="text-white font-semibold underline decoration-gray-600 hover:decoration-white transition">
-            Join the waitlist →
-          </a>
-        </div>
-
-        <div class="flex-1 w-full h-64 bg-gray-950 border border-gray-800 rounded-2xl flex items-center justify-center text-gray-600 shadow-inner">
-          <span class="font-mono text-sm text-center px-4">
-            [ Sync UI Mock ]
-          </span>
-        </div>
-      </div>
-    </section>
-
-    <!-- INSTALL -->
-    <section class="mb-24 border border-gray-800 p-8 rounded-2xl bg-gray-950/50">
-      <h2 class="text-2xl font-semibold mb-4">
-        Install the Alpha
-      </h2>
-
-      <p class="text-gray-400 mb-6">
-        No Chrome Web Store delays. Install in 30 seconds:
-      </p>
-
-      <div class="bg-gray-900 rounded-xl p-6 font-mono text-sm text-gray-300">
-        <ol class="list-decimal list-inside space-y-3">
-          <li>Download the ZIP from GitHub</li>
-          <li>Go to <code class="bg-black px-2 py-1 rounded text-green-400">chrome://extensions/</code></li>
-          <li>Enable Developer Mode</li>
-          <li>Click "Load unpacked"</li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <section class="border-t border-gray-800 pt-16 text-center md:text-left">
-      <h2 class="text-2xl font-semibold mb-4">
-        Built in public.
-      </h2>
-
-      <p class="text-gray-400 mb-6 max-w-3xl">
-        Bonsai Capture is a standalone tool for owning your AI data—and the first step toward a larger ecosystem focused on transparency, inspectability, and control.
-      </p>
-
-      <div class="flex flex-wrap justify-center md:justify-start gap-6 text-sm font-semibold">
-        <a href="#" class="text-gray-400 hover:text-white transition">GitHub</a>
-        <a href="#" class="text-gray-400 hover:text-white transition">Docs</a>
-        <a href="#" class="text-gray-400 hover:text-white transition">LinkedIn</a>
-        <a href="#" class="text-gray-400 hover:text-white transition">Report an issue</a>
-      </div>
-    </section>
-
-  </div>
-
-</body>
-</html>
+<span class="text-[#ff7b72]">```python</span>
+<span class="text-[#ff7b72]">def</span> <span class="text-[#d2a8ff]">black_scholes</span>(S, K, T, r, sigma):
+    <span class="text-[#8b949e]"># Implementation details here</span>
+    <span class="text-[#ff7b72]">return</span> price
+<span class="text-[#ff7b72]">```</span></pre>
+</div>
+</div>
+</section>
+<!-- Future Section (Premium) -->
+<section class="py-32 max-w-7xl mx-auto px-8">
+<div class="relative glass-panel rounded-[3rem] p-12 md:p-20 overflow-hidden border border-primary/20">
+<div class="absolute top-0 right-0 p-8">
+<span class="px-4 py-1 rounded-full digital-biome-gradient text-on-primary-fixed-variant text-xs font-bold uppercase tracking-widest">Coming Soon</span>
+</div>
+<div class="max-w-2xl">
+<h2 class="text-4xl md:text-6xl font-bold tracking-tight mb-8">Background Sync (Pro)</h2>
+<p class="text-xl text-on-surface-variant mb-12 leading-relaxed">
+                        Never press export again. Our upcoming background daemon monitors your active sessions and pushes new messages to your local vault in real-time. Zero friction. Total coverage.
+                    </p>
+<button class="px-8 py-4 rounded-full bg-white text-surface font-bold text-lg hover:scale-105 transition-transform">Join the Pro Waitlist</button>
+</div>
+<!-- Decorative Abstract Shape -->
+<div class="absolute -bottom-20 -right-20 w-80 h-80 rounded-full digital-biome-gradient opacity-20 blur-3xl"></div>
+</div>
+</section>
+<!-- Install Guide -->
+<section class="py-24 max-w-7xl mx-auto px-8">
+<h2 class="text-3xl font-bold text-center mb-16">Get started in under 2 minutes</h2>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="relative">
+<span class="text-8xl font-black text-white/5 absolute -top-8 -left-4 select-none">1</span>
+<div class="relative z-10 pt-8">
+<h4 class="text-xl font-bold mb-2">Download</h4>
+<p class="text-on-surface-variant text-sm">Grab the latest Alpha build for your OS.</p>
+</div>
+</div>
+<div class="relative">
+<span class="text-8xl font-black text-white/5 absolute -top-8 -left-4 select-none">2</span>
+<div class="relative z-10 pt-8">
+<h4 class="text-xl font-bold mb-2">Install Extension</h4>
+<p class="text-on-surface-variant text-sm">Add our secure companion to Chrome or Brave.</p>
+</div>
+</div>
+<div class="relative">
+<span class="text-8xl font-black text-white/5 absolute -top-8 -left-4 select-none">3</span>
+<div class="relative z-10 pt-8">
+<h4 class="text-xl font-bold mb-2">Login to AI</h4>
+<p class="text-on-surface-variant text-sm">Visit your favorite LLM chat interface.</p>
+</div>
+</div>
+<div class="relative">
+<span class="text-8xl font-black text-white/5 absolute -top-8 -left-4 select-none">4</span>
+<div class="relative z-10 pt-8">
+<h4 class="text-xl font-bold mb-2">Harvest</h4>
+<p class="text-on-surface-variant text-sm">Click capture and watch your garden grow.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0b1326] w-full py-12 px-8 border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-6">
+<div class="flex items-center gap-4">
+<span class="text-lg font-bold text-[#34D399] font-headline">Bonsai Capture</span>
+<span class="text-sm text-slate-500 font-manrope">© 2024 Bonsai Capture. Cultivating Clarity.</span>
+</div>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-white transition-colors text-sm font-manrope opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-white transition-colors text-sm font-manrope opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-white transition-colors text-sm font-manrope opacity-80 hover:opacity-100" href="#">Security</a>
+<a class="text-slate-500 hover:text-white transition-colors text-sm font-manrope opacity-80 hover:opacity-100" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>
