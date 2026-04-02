@@ -2,7 +2,7 @@
 Landing page for Bonsai Capture - extract, own and reuse your AI conversations
 
 ## 🚀 Live Site
-[View Landing Page](https://teelapo6.github.io/bonsai-capture/)
+[View Landing Page](http://taylorlaporte.me/Bonsai-Capture/)
 
 ## 🌱 What is Bonsai Capture?
 
